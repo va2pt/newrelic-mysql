@@ -39,3 +39,16 @@ integrations:
     env: production
     role: write-replica
   inventory_source: config/mysql
+
+  # For multi-instance 
+  - name: nri-mysql
+    env:
+      METRICS: true
+      HOSTNAME: mysql_host2
+      PORT: 3306
+      USERNAME: mysql2_user
+      PASSWORD: mysql2_password
+      REMOTE_MONITORING: true
+    interval: 30s
+    labels:
+      environment: production
