@@ -1,7 +1,7 @@
 integrations:
 - name: nri-mysql
   env:
-    HOSTNAME: 172.18.0.2
+    HOSTNAME: 172.17.0.6
     PORT: 3306
     # ENABLE_TLS: false
     # INSECURE_SKIP_VERIFY: false
@@ -11,8 +11,8 @@ integrations:
     # If not empty `socket` parameter will discard `port` parameter
     #SOCKET: <PATH_TO_LOCAL_SOCKET_FILE_NAME>
     
-    USERNAME: root
-    PASSWORD: root
+    USERNAME: abhishek
+    PASSWORD: abhishek
     # Allow old password https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_old_passwords
     # OLD_PASSWORDS: false
 
@@ -20,11 +20,11 @@ integrations:
     # DATABASE: ""
 
     # Enable extended metrics
-    # EXTENDED_METRICS: false
+    EXTENDED_METRICS: true
 
     # Enable additional metrics
-    # EXTENDED_INNODB_METRICS: false
-    # EXTENDED_MY_ISAM_METRICS: false
+    EXTENDED_INNODB_METRICS: true
+    EXTENDED_MY_ISAM_METRICS: true
 
     # New users should leave this property as `true`, to identify the
     # monitored entities as `remote`. Setting this property to `false` (the
@@ -41,14 +41,14 @@ integrations:
   inventory_source: config/mysql
 
   # For multi-instance 
-  - name: nri-mysql
-    env:
-      METRICS: true
-      HOSTNAME: mysql_host2
-      PORT: 3306
-      USERNAME: mysql2_user
-      PASSWORD: mysql2_password
-      REMOTE_MONITORING: true
+- name: nri-mysql
+  env:
+    METRICS: true
+    HOSTNAME: 17.17.0.5
+    PORT: 3306
+    USERNAME: abhishek
+    PASSWORD: abhishek
+    REMOTE_MONITORING: true
     interval: 30s
     labels:
       environment: production
