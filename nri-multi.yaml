@@ -1,0 +1,25 @@
+integrations:
+  - name: nri-mysql
+    env:
+      METRICS: true
+      HOSTNAME: 172.17.0.6
+      PORT: 3306
+      USERNAME: abhishek
+      PASSWORD: abhishek
+      REMOTE_MONITORING: true
+      EXTENDED_METRICS: true
+    interval: 30s
+    labels:
+      environment: production
+
+  - name: nri-mysql
+    env:
+      METRICS: true
+      HOSTNAME: 172.17.0.5
+      PORT: 3306
+      USERNAME: abhishek
+      PASSWORD: abhishek
+      REMOTE_MONITORING: true
+    interval: 30s
+    labels:
+      environment: production
